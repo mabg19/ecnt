@@ -5,23 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECOnnect</title>
+    <link href='https://fonts.googleapis.com/css?family=Sen' rel='stylesheet'>
     <style>
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: Sen, sans-serif;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
             margin: 0;
         }
 
         #header {
-            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 30px;
             background-color: #F2F2F2;
             display: flex;
             justify-content: space-between;
@@ -30,6 +28,22 @@
             z-index: 1000;
         }
 
+        .background-image-section {
+            background-image: url('{% static 'background/familiafeliz.png' %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            padding: 20px;
+            height: 450px;
+        }
+
+        #text {
+            line-height: 1.5;
+            color: #f9f9f9;
+            font-size: 13px;
+        }
+        
         #logo-container {
             display: flex;
             align-items: center;
@@ -37,8 +51,9 @@
         }
 
         #links {
+            font-size: 20px;
             display: flex;
-            gap: 20px;
+            gap: 30px;
             align-items: left;
             justify-content: flex-start;
             margin-left: 15px;
@@ -56,7 +71,7 @@
             justify-content: center;
         }
 
-        #usuario {
+        #user {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -70,42 +85,90 @@
             margin-bottom: 20px;
         }
 
-        #text {
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 80px;
             text-align: center;
-            color: #333;
-            font-size: 16px;
-            font-weight: lighter;
-            font-family: 'Trebuchet MS', sans-serif;
         }
+
+        .title-link {
+            color: black;
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .rectangle {
+            width: 340px;
+            height: 380px;
+            background-color: #F2F2F2;
+        }
+
     </style>
 </head>
 <body>
     <!-- Seção do cabeçalho -->
     <div id="header">
         <div id="logo-container">
-            <div id="simbolo">
+            <div>
                 <img src="{% static 'logo\ECNTdesign.png' %}" alt="Símbolo ECOnnect" id="logo-design" style="width: 50px; height: auto;"></div>
-            <div id="logo-principal">
-                <img src="{% static 'logo\ECNTlogo.png' %}" alt="Logo ECOnnect" style="width: 150px; height: auto;"></div>
+            <div>
+                <a href="http://127.0.0.1:8000/">
+                    <img src="{% static 'logo\ECNTlogo.png' %}" alt="Logo ECOnnect" style="width: 150px; height: auto;">
+                </a>
+            </div>
             <div id="links">
-                <a href="{% url 'area' %}">Área Disponível</a>
-                <a href="{% url 'calculadora' %}">Calculadora Solar</a>
-                <a href="{% url 'potencial' %}">Potencial de Energia</a>
-                <a href="{% url 'orcamento' %}">Orçamento</a>
+                <a href="http://127.0.0.1:8000/area">Área Disponível</a>
+                <a href="http://127.0.0.1:8000/calculadora/">Calculadora Solar</a>
+                <a href="http://127.0.0.1:8000/potencial/">Potencial de Energia</a>
+                <a href="http://127.0.0.1:8000/orcamento/">Orçamento</a></div>
         </div>
-        <div id="usuario">
+        <div id="user">
             <img src="{% static 'logo\user.png' %}" alt="Símbolo User" style="width: 40px; height: auto;"></div>
-    </div>    
+    </div>   
 
-    <div id="images">
-        <img src="{% static 'logo\ECNTdesignmenu.png' %}" alt="Símbolo ECOnnect" style="width: 125px;" >
-        <img src="{% static 'logo\ECNTlogomenu.png' %}" alt="Logo ECOnnect" style="width: 400px;">
+    <div class="background-image-section">
+        <h1 style="font-size: 50px; margin-top: 100px;"> Descubra o Poder do Sol<br> com a gente. </h1>
+        <i><div id="text" style="width: 40%;">
+            <h3>A plataforma ECOnnect é um ambiente dedicado à promoção da conexão e integração dentro do ecossistema da energia solar, com um enfoque direto no Objetivo de Desenvolvimento Sustentável 7.
+            Nossa missão é fornecer informações essenciais sobre regulamentações, oferecer recursos de acompanhamento financeiro, promover a conscientização sobre energia limpa e facilitar o acesso a empresas locais. <br>
+        </div>
+        </div>
     </div>
 
-    <i><div id="text">
-        <h3>A plataforma ECOnnect é um ambiente dedicado à promoção da conexão e integração dentro do ecossistema da energia solar, <br> com um enfoque direto no Objetivo de Desenvolvimento Sustentável 7.
-        Nossa missão é fornecer informações essenciais sobre regulamentações, <br> oferecer recursos de acompanhamento financeiro, promover a conscientização sobre energia limpa e facilitar o acesso a empresas locais. <br>
-        Tudo isso visa tornar a transição para uma energia mais sustentável e eficiente uma realidade acessível e prática para todos.</h3></i>
+    <div class="flex-center" style="gap: 60px;">
+        <div>
+            <a href=".">
+                <div class="rectangle"></div>
+            </a>
+            <div id="text">
+                <a href="." class="title-link">FAQ</a>
+            </div>
+        </div>        
+        <div>
+            <a href=".">
+                <div class="rectangle"></div>
+            </a>
+            <div id="text">
+                <a href="." class="title-link">CALCULADORA SOLAR</a>
+            </div>
+        </div>   
+        <div>
+            <a href=".">
+                <div class="rectangle"></div>
+            </a>
+            <div id="text">
+                <a href="." class="title-link">BENEFÍCIOS DA ENERGIA SOLAR</a>
+            </div>
+        </div>   
     </div>
+
+    <div style="width:100%; height: 0px; border: 1px gray solid; margin-top: 80px; margin-bottom: 80px;"></div>
+
+    <div style="text-align: left; margin-left: 20px; height: 33.43px; color: black; font-size: 35px; white-space: break-spaces;">FEEDBACKS</div>
+
 </body>
 </html>
